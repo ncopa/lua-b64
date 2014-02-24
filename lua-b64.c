@@ -28,7 +28,7 @@ static const char *urlsafe_base64_tbl =
 static int b64_encode_tbl(lua_State *L, const char *tbl)
 {
 	size_t len, n = 0;
-	const char *src = luaL_checklstring(L, 1, &len);
+	const unsigned char *src = (const unsigned char *)luaL_checklstring(L, 1, &len);
 	luaL_Buffer dst;
 	unsigned int triplet = 0;
 	unsigned int pad;
